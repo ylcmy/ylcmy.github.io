@@ -1,0 +1,215 @@
+# Butterfly Theme Configuration
+# Docs: https://butterfly.js.org/
+
+# 导航菜单
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  列表||fas fa-list:
+    音乐: /music/ || fas fa-music
+    电影: /movies/ || fas fa-video
+  友链: /links/ || fas fa-link
+  关于: /about/ || fas fa-heart
+
+# 代码块配置
+code_blocks:
+  # Code block theme: darker / pale night / light / ocean / false
+  theme: light
+  macStyle: true
+  height_limit: 300
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+# 侧边栏
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: 计算机硕士研究生<br>后端开发 & AI应用研发
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/ylcmy
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的个人主页，这里记录我的学习笔记和日常思考。
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+    sort_order:
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+    sort_order:
+  card_tags:
+    enable: true
+    limit: 40
+    color: true
+    orderby: random
+    order: 1
+    sort_order:
+
+# 首页顶部样式
+index_img: /img/default.jpg
+disable_top_img: false
+
+default_top_img: /img/default.jpg
+
+# 头像（侧边栏）
+avatar:
+  img: /img/avatar.jpg
+  effect: false
+
+# 文章封面
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  position: both
+  default_cover:
+    - /img/cover1.png
+    - /img/cover2.png
+
+# 社交图标
+social:
+  fab fa-github: https://github.com/ylcmy || Github || '#24292e'
+  fas fa-envelope: mailto:2934773988@qq.com || Email || '#4a7dbe'
+
+# 文章页配置
+post_meta:
+  page:
+    date_type: updated
+    date_format: relative
+    categories: true
+    tags: true
+    label: true
+  post:
+    date_type: both
+    date_format: relative
+    categories: true
+    tags: true
+    label: true
+
+# 文章版权
+post_copyright:
+  enable: true
+  decode: true
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 目录
+toc:
+  post: true
+  page: true
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+# 相关文章
+related_post:
+  enable: true
+  limit: 6 # 显示的文章数量
+  date_type: created
+
+# 数学公式（KaTeX）
+katex:
+  enable: true
+  per_page: true
+  hide_scrollbar: false
+
+# 评论系统 - Giscus（基于 GitHub Discussions，无需后端，国内可访问）
+comments:
+  use: Giscus
+  count: true
+  card_post_count: false
+
+# Twikoo 配置（已注释，备用）
+# twikoo:
+#   envId: https://my-twikoo-sigma-drab.vercel.app
+#   region:
+#   visitor: true
+#   option:
+
+# Giscus 配置
+# 需要在 https://giscus.app/ 生成配置，填入 repo、repo_id、category_id
+giscus:
+  repo: ylcmy/ylcmy.github.io
+  repo_id: MDEwOlJlcG9zaXRvcnkzMjIwMDIxMTI=
+  category_id: DIC_kwDOEzFcwM4C8cI7
+  light_theme: light
+  dark_theme: dark
+  js:
+  option:
+
+# 暗色模式
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: false
+
+# 页脚
+footer:
+  owner:
+    enable: true
+    since: 2026
+  custom_text:
+  copyright: true
+  runtime:
+    enable: true
+    launch_time: 05/06/2026 00:00:00
+    work_img: /img/working.png
+    work_description: 正在加油工作中...
+    off_img: /img/sleeping.png
+    off_description: 休息中...
+  framework:
+    enable: true
+    name: Butterfly
+    version: true
+
+# 美化页面
+beautify:
+  enable: true
+  field: post
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: "#F47466"
+
+# 进入动画
+enter_transitions:
+  enable: true
+
+# 搜索
+search:
+  enable: true
+  algolia_search:
+    enable: false
+  local_search:
+    enable: true
+    preload: true
+    CDN:
+
+# 网站访问人数统计
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# 在返回顶部按钮中显示滚动百分比
+rightside_scroll_percent: true
