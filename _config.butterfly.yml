@@ -191,6 +191,11 @@ beautify:
   title-prefix-icon: '\f0c1'
   title-prefix-icon-color: "#F47466"
 
+# 加载动画
+preloader:
+  enable: true
+  source: 1 # 1=全屏动画, 2=进度条
+
 # 进入动画
 enter_transitions:
   enable: true
@@ -213,3 +218,24 @@ busuanzi:
 
 # 在返回顶部按钮中显示滚动百分比
 rightside_scroll_percent: true
+
+# hexo-butterfly-categories-card 首页分类磁贴
+# see https://akilar.top/posts/a9131002/
+categoryBar:
+  enable: false # 开关
+  priority: 5 # 过滤器优先权
+  enable_page: / # 应用页面（首页）
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd # odd：3列 | even：4列
+  row: 1 # 显示行数，超过行数切换为滚动显示
+  message:
+    - descr: "日常"
+      # cover: /img/default.jpg
+    - descr: "后端开发"
+      # cover: /img/default.jpg
+    - descr: "AI应用研发"
+      # cover: /img/default.jpg
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
