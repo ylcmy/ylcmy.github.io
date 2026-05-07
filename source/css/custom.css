@@ -312,3 +312,105 @@ pre,
     padding: 25px 15px 15px;
   }
 }
+
+/* ========== 分类/标签导航栏样式 ========== */
+#catalog-bar {
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+#catalog-bar:hover {
+  border-color: #667eea;
+}
+
+#catalog-bar i {
+  color: #667eea;
+  margin-right: 0.5rem;
+}
+
+#catalog-list {
+  margin: 0 0.5rem;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#catalog-list::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-list-item {
+  display: inline-block;
+}
+
+.catalog-list-item a {
+  display: inline-block;
+  margin: 0 0.2em;
+  padding: 0.3em 0.6em;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.catalog-list-item:hover a {
+  background: #667eea;
+  color: #fff;
+}
+
+.catalog-list-item.selected a {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+a.catalog-more {
+  min-width: fit-content;
+  font-weight: bold;
+  color: #667eea;
+  font-size: 0.9em;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+a.catalog-more:hover {
+  color: #764ba2;
+}
+
+/* 暗色模式适配 */
+[data-theme="dark"] #catalog-bar {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+[data-theme="dark"] #catalog-bar:hover {
+  border-color: #667eea;
+}
+
+[data-theme="dark"] .catalog-list-item a {
+  color: #ccc;
+}
+
+[data-theme="dark"] .catalog-list-item:hover a,
+[data-theme="dark"] .catalog-list-item.selected a {
+  background: #667eea;
+  color: #fff;
+}
+
+[data-theme="dark"] a.catalog-more {
+  color: #8b9cf7;
+}
+
+[data-theme="dark"] a.catalog-more:hover {
+  color: #a78bfa;
+}

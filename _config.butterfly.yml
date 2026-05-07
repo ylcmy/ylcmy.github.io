@@ -9,7 +9,7 @@ menu:
   标签: /tags/ || fas fa-tags
   列表||fas fa-list:
     音乐: /music/ || fas fa-music
-    电影: /movies/ || fas fa-video
+    影视: /movies/ || fas fa-video
   友链: /links/ || fas fa-link
   关于: /about/ || fas fa-heart
 
@@ -110,7 +110,7 @@ cover:
 
 # 社交图标
 social:
-  fab fa-github: https://github.com/ylcmy || Github || '#24292e'
+  fab fa-bilibili: https://space.bilibili.com/1197735953?spm_id_from=333.1007.0.0 || Bilibili || '#00a1d6'
   fas fa-envelope: mailto:2934773988@qq.com || Email || '#4a7dbe'
 
 # 文章页配置
@@ -257,7 +257,7 @@ lightbox: fancybox
 
 # 搜索
 search:
-  use: local_search  # 指定搜索引擎
+  use: local_search # 指定搜索引擎
   placeholder: 搜索文章...
   local_search:
     preload: true
@@ -309,3 +309,4 @@ inject:
     - <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   bottom:
     - <script src="/js/runtime.js"></script>
+    - <script src="/js/catalog-bar.js"></script>
