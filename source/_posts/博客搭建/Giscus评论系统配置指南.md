@@ -1,13 +1,12 @@
 ---
 title: Giscus评论系统配置指南
 date: 2026-05-07 11:00:00
-updated: 2026-05-07 11:00:00
 categories:
   - 博客搭建
 tags:
   - Giscus
-  - 评论系统
-  - GitHub Discussions
+  - GitHub
+  - Butterfly
 cover: /img/cover2.png
 description: 详细介绍如何为Hexo博客配置基于GitHub Discussions的Giscus评论系统，无需后端服务，国内可正常访问。
 ---

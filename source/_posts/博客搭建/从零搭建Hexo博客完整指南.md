@@ -1,13 +1,11 @@
 ---
 title: 从零搭建Hexo博客完整指南
 date: 2026-05-07 10:00:00
-updated: 2026-05-07 10:00:00
 categories:
   - 博客搭建
 tags:
   - Hexo
   - Butterfly
-  - 博客搭建
   - GitHub Pages
 cover: /img/cover1.png
 description: 详细介绍从零开始搭建Hexo博客并使用Butterfly主题的完整过程，包含环境配置、主题安装、评论系统集成等关键步骤。
@@ -291,7 +289,6 @@ code_blocks:
 ---
 title: 文章标题
 date: 2026-05-07 10:00:00
-updated: 2026-05-07 10:00:00
 categories:
   - 分类名称
 tags:
@@ -419,9 +416,11 @@ hexo clean && hexo g && hexo d
 通过以上步骤，你已经成功搭建了一个基于 Hexo 和 Butterfly 主题的个人博客。接下来可以继续：
 
 - [添加评论系统（Giscus）](/posts/Giscus评论系统配置指南/)
-- 配置搜索功能
-- 添加看板娘等特效
-- 自定义主题样式
+- [配置导航菜单与侧边栏](/posts/Butterfly导航菜单与侧边栏配置/)
+- [美化文章页与内容配置](/posts/Butterfly文章页与内容配置/)
+- [配置视觉效果（动画、暗色模式、字体等）](/posts/Butterfly主题视觉效果配置/)
+- [美化页脚与运行时间脚本](/posts/博客页脚美化与运行时间脚本/)
+- [配置搜索与自定义页面](/posts/Butterfly搜索与自定义页面配置/)
 
 更多配置请参考 [Butterfly 官方文档](https://butterfly.js.org/)。
 

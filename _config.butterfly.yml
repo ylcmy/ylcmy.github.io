@@ -16,7 +16,7 @@ menu:
 # 代码块配置
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
-  theme: light
+  theme: darker
   macStyle: true
   height_limit: 300
   word_wrap: false
@@ -65,11 +65,33 @@ aside:
     order: 1
     sort_order:
 
+# 浏览器标签页图标
+favicon: /img/favicon.jpg
+
+# 首页副标题打字效果
+subtitle:
+  enable: true
+  effect: true # 开启打字机动画
+  # 第三方API（选一个，或设为 false 用自定义文字）
+  # 1 = 一言 (hitokoto.cn)
+  # 2 = 一言 (aa1.cn)
+  # 3 = 今日诗词 (jinrishici.com)
+  source: 1
+
+activate_power_mode:
+  enable: true
+  colorful: true # 开启粒子动画（发光特效）
+  shake: true # 开启 shake（抖动特效）
+  mobile: false
+
 # 首页顶部样式
 index_img: /img/default.jpg
 disable_top_img: false
 
 default_top_img: /img/default.jpg
+
+nav:
+  logo: /img/logo.jpg
 
 # 头像（侧边栏）
 avatar:
@@ -106,6 +128,12 @@ post_meta:
     tags: true
     label: true
 
+# 相关文章
+related_post:
+  enable: true
+  limit: 6 # 显示的文章数量
+  date_type: created
+
 # 文章版权
 post_copyright:
   enable: true
@@ -118,16 +146,10 @@ post_copyright:
 toc:
   post: true
   page: true
-  number: true
+  number: false
   expand: false
   style_simple: false
   scroll_percent: true
-
-# 相关文章
-related_post:
-  enable: true
-  limit: 6 # 显示的文章数量
-  date_type: created
 
 # 数学公式（KaTeX）
 katex:
@@ -170,19 +192,27 @@ footer:
   owner:
     enable: true
     since: 2026
-  custom_text:
+  custom_text: |
+    <div style="text-align:center; padding:10px 0;">
+      <p style="margin:5px 0; font-size:0.9em; color:#555;">
+        <i class="fas fa-heart" style="color:#e74c3c; margin:0 5px;"></i>
+        用代码编织梦想，用文字记录成长
+        <i class="fas fa-heart" style="color:#e74c3c; margin:0 5px;"></i>
+      </p>
+      <p id="runtime" style="margin:8px 0; font-size:0.85em; color:#666;"></p>
+      <p style="margin:5px 0; font-size:0.8em; color:#888;">
+        Powered by <a href="https://hexo.io/" target="_blank" style="color:#667eea; text-decoration:none;">Hexo</a> &
+        <a href="https://butterfly.js.org/" target="_blank" style="color:#667eea; text-decoration:none;">Butterfly</a>
+      </p>
+    </div>
   copyright: true
-  runtime:
-    enable: true
-    launch_time: 05/06/2026 00:00:00
-    work_img: /img/working.png
-    work_description: 正在加油工作中...
-    off_img: /img/sleeping.png
-    off_description: 休息中...
   framework:
     enable: true
     name: Butterfly
     version: true
+
+# 页脚背景
+footer_img: false
 
 # 美化页面
 beautify:
@@ -200,15 +230,46 @@ preloader:
 enter_transitions:
   enable: true
 
+# 字体美化
+font:
+  global_font_size: 16px
+  code_font_size: 14px
+  font_family: '"LXGW WenKai", "Noto Sans SC", sans-serif'
+  code_font_family: '"Fira Code", "JetBrains Mono", monospace'
+
+# 博客标题字体
+blog_title_font:
+  font_link: https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap
+  font_family: '"LXGW WenKai", cursive'
+
+# 图片懒加载
+lazyload:
+  enable: true
+  native: false # true=浏览器原生懒加载, false=vanilla-lazyload（兼容性更好）
+  field: site # site=全站, post=仅文章页
+  placeholder: # 加载占位图（留空则显示模糊缩略图）
+  blur: false # true=模糊过渡效果
+
+# 图片放大查看（灯箱效果）
+# fancybox: 功能丰富，支持缩放、幻灯片
+# medium_zoom: 轻量级，简洁放大
+lightbox: fancybox
+
 # 搜索
 search:
-  enable: true
-  algolia_search:
-    enable: false
+  use: local_search  # 指定搜索引擎
+  placeholder: 搜索文章...
   local_search:
-    enable: true
     preload: true
-    CDN:
+    top_n_per_article: 1
+    unescape: false
+
+# 文章字数统计
+wordcount:
+  enable: true
+  post_wordcount: true # 文章页显示字数
+  min2read: true # 显示阅读时间
+  total_wordcount: true # 侧边栏显示全站总字数
 
 # 网站访问人数统计
 busuanzi:
@@ -239,3 +300,12 @@ categoryBar:
     - descr: "AI应用研发"
       # cover: /img/default.jpg
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
+
+# 自定义注入
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+    - <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  bottom:
+    - <script src="/js/runtime.js"></script>
