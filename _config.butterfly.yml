@@ -81,7 +81,7 @@ subtitle:
 activate_power_mode:
   enable: true
   colorful: true # 开启粒子动画（发光特效）
-  shake: true # 开启 shake（抖动特效）
+  shake: false # 开启 shake（抖动特效）
   mobile: false
 
 # 首页顶部样式

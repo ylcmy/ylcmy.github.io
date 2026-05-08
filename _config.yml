@@ -79,8 +79,8 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
-updated_option: "mtime"
+## updated_option supports 'mtime', 'date', 'empty', 'git'
+updated_option: "git"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -111,3 +111,9 @@ deploy:
   type: git
   repo: https://github.com/ylcmy/ylcmy.github.io.git
   branch: main
+
+# hexo-blog-encrypt 文章加密配置
+encrypt:
+  abstract: 本文已加密，请输入密码查看
+  wrong_pass_message: 密码错误，请重新输入
+  autoSave: true
