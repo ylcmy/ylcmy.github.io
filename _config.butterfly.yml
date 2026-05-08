@@ -283,28 +283,35 @@ rightside_scroll_percent: true
 # hexo-butterfly-categories-card 首页分类磁贴
 # see https://akilar.top/posts/a9131002/
 categoryBar:
-  enable: false # 开关
+  enable: true # 开关
   priority: 5 # 过滤器优先权
   enable_page: / # 应用页面（首页）
   layout: # 挂载容器类型
     type: id
     name: recent-posts
     index: 0
-  column: odd # odd：3列 | even：4列
-  row: 1 # 显示行数，超过行数切换为滚动显示
+  column: even # odd：3列 | even：4列
+  row: 2 # 显示行数，超过行数切换为滚动显示
   message:
-    - descr: "日常"
-      # cover: /img/default.jpg
-    - descr: "后端开发"
-      # cover: /img/default.jpg
-    - descr: "AI应用研发"
-      # cover: /img/default.jpg
-  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
+    - name: "日常"
+      descr: "日常记录与随笔"
+      cover: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop"
+    - name: "AI应用研发"
+      descr: "AI与大模型应用"
+      cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop"
+    - name: "暑期实习面经"
+      descr: "2026暑期实习面试"
+      cover: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop"
+    - name: "博客搭建"
+      descr: "Hexo博客搭建笔记"
+      cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop"
+  # custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
 
 # 自定义注入
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/category-tile.css">
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
     - <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   bottom:
