@@ -12,7 +12,7 @@
     "version": "8.1.1"
   },
   "dependencies": {
-    "hexo": "^8.0.0",
+    "hexo": "^8.1.2",
     "hexo-bilibili-bangumi": "^2.0.4",
     "hexo-blog-encrypt": "^4.0.0",
     "hexo-butterfly-categories-card": "^1.0.0",
