@@ -8,4 +8,5 @@ public/
 _multiconfig.yml
 .claude/
 .obsidian/
-.envsource/_data/
+.env
+source/_data/

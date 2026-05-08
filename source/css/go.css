@@ -1,0 +1,331 @@
+/* ============================================
+   External Link Redirect Page
+   Aesthetic: Warm neutral + refined accents
+   ============================================ */
+
+.go-wrap {
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem 1.5rem;
+  background: #F5F5F5;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .go-wrap {
+  background: #1a1a2e;
+}
+
+/* Animated gradient border wrapper */
+.go-card-glow {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    rgba(203, 213, 225, 0.5),
+    rgba(226, 232, 240, 0.5),
+    rgba(203, 213, 225, 0.5),
+    rgba(226, 232, 240, 0.5)
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  animation: borderGlow 8s ease infinite, cardEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+[data-theme="dark"] .go-card-glow {
+  background: linear-gradient(
+    135deg,
+    rgba(100, 116, 139, 0.3),
+    rgba(71, 85, 105, 0.3),
+    rgba(100, 116, 139, 0.3),
+    rgba(71, 85, 105, 0.3)
+  );
+}
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Inner card */
+.go-card {
+  background: #FDFDFD;
+  border-radius: 18px;
+  padding: 2.75rem 2.25rem 2.25rem;
+  text-align: center;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 20px 44px rgba(0, 0, 0, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.go-card-glow:hover .go-card {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 12px 32px rgba(0, 0, 0, 0.08),
+    0 28px 56px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .go-card {
+  background: #242438;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 20px 44px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .go-card-glow:hover .go-card {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 28px 56px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon */
+.go-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #eef0f5;
+  color: #3a3f4b;
+  margin-bottom: 1.5rem;
+  animation: iconFloat 4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .go-icon {
+  background: rgba(100, 116, 139, 0.18);
+  color: #b0b8c8;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* Typography */
+.go-title {
+  font-family: "LXGW Wenkai", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .go-title {
+  color: #e8e8f0;
+}
+
+/* URL display box */
+.go-url-box {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #f5f5f8;
+  border: 1px solid #e8e8ec;
+  border-radius: 10px;
+  padding: 0.7rem 0.875rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.go-url-box:hover {
+  border-color: #d0d0d8;
+}
+
+[data-theme="dark"] .go-url-box {
+  background: rgba(15, 15, 30, 0.5);
+  border-color: rgba(100, 116, 139, 0.25);
+}
+
+[data-theme="dark"] .go-url-box:hover {
+  border-color: rgba(100, 116, 139, 0.4);
+}
+
+.go-url {
+  flex: 1;
+  font-family: "Fira Code", monospace;
+  font-size: 0.78rem;
+  color: #5b6478;
+  word-break: break-all;
+  line-height: 1.65;
+  text-align: left;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+[data-theme="dark"] .go-url {
+  color: #94a3b8;
+}
+
+/* Copy button */
+.go-copy-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid #e0e0e6;
+  border-radius: 7px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.go-copy-btn:hover {
+  background: #eaeaed;
+  border-color: #c8c8d0;
+  color: #5b6478;
+}
+
+[data-theme="dark"] .go-copy-btn {
+  border-color: rgba(100, 116, 139, 0.3);
+  color: #64748b;
+}
+
+[data-theme="dark"] .go-copy-btn:hover {
+  background: rgba(100, 116, 139, 0.12);
+  border-color: rgba(100, 116, 139, 0.4);
+  color: #94a3b8;
+}
+
+/* Warning text */
+.go-warn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: "LXGW Wenkai", sans-serif;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.go-warn + .go-warn {
+  margin-top: -0.1rem;
+}
+
+.go-warn-group {
+  margin-bottom: 1.75rem;
+}
+
+[data-theme="dark"] .go-warn {
+  color: #8892a4;
+}
+
+/* Action buttons */
+.go-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.go-btn {
+  font-family: "LXGW Wenkai", "Inter", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.65rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  outline: none;
+}
+
+/* Primary button */
+.go-btn-primary {
+  background: #2c2c3a;
+  color: #f0f0f4;
+  box-shadow: 0 2px 8px rgba(44, 44, 58, 0.2);
+}
+
+.go-btn-primary:hover {
+  background: #3d3d50;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(44, 44, 58, 0.25);
+}
+
+[data-theme="dark"] .go-btn-primary {
+  background: #4a4a60;
+  color: #f0f0f4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .go-btn-primary:hover {
+  background: #5a5a72;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Secondary button */
+.go-btn-secondary {
+  background: transparent;
+  color: #7a7e8a;
+  border: 1px solid #e0e0e6;
+}
+
+.go-btn-secondary:hover {
+  background: #f0f0f2;
+  color: #4a4e5a;
+  border-color: #c0c0ca;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .go-btn-secondary {
+  color: #94a3b8;
+  border-color: rgba(100, 116, 139, 0.3);
+}
+
+[data-theme="dark"] .go-btn-secondary:hover {
+  background: rgba(100, 116, 139, 0.12);
+  color: #cbd5e1;
+  border-color: rgba(100, 116, 139, 0.4);
+}
+
+/* Error state */
+.go-error {
+  display: none;
+}
+
+.go-error p {
+  font-family: "LXGW Wenkai", sans-serif;
+  color: #6b7280;
+  margin: 0 0 1rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .go-card-glow,
+  .go-icon {
+    animation: none;
+  }
+  .go-card-glow {
+    opacity: 1;
+    transform: none;
+  }
+}
