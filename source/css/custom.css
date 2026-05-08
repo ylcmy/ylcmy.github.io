@@ -254,46 +254,6 @@ pre,
   color: #666;
 }
 
-/* 电影页面样式 */
-.movies-page {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.movie-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #e74c3c;
-  transition: all 0.3s ease;
-}
-
-.movie-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.movie-info h3 {
-  margin: 0 0 10px 0;
-  color: #333;
-  font-size: 1.3em;
-}
-
-.movie-meta {
-  color: #e74c3c;
-  font-size: 0.9em;
-  margin: 0 0 10px 0;
-  font-weight: 500;
-}
-
-.movie-desc {
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
 /* 暗色模式适配 */
 [data-theme="dark"] .flink-list-item {
   background: #2d2d2d;
@@ -305,18 +265,6 @@ pre,
 
 [data-theme="dark"] .flink-item-desc {
   color: #aaa;
-}
-
-[data-theme="dark"] .movie-card {
-  background: #2d2d2d;
-}
-
-[data-theme="dark"] .movie-info h3 {
-  color: #fff;
-}
-
-[data-theme="dark"] .movie-desc {
-  color: #ccc;
 }
 
 [data-theme="dark"] .now-playing {
@@ -425,8 +373,7 @@ pre,
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
-  .music-card,
-  .movie-card {
+  .music-card {
     padding: 20px;
   }
 
@@ -535,4 +482,258 @@ a.catalog-more:hover {
 
 [data-theme="dark"] a.catalog-more:hover {
   color: #a78bfa;
+}
+
+/* ========== 追番/追剧页面样式 (hexo-bilibili-bangumi 覆盖) ========== */
+
+/* --- 引言区域 --- */
+.bangumi-page blockquote,
+#bangumi blockquote {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-left: 4px solid #667eea;
+  border-radius: 0 12px 12px 0;
+  padding: 16px 24px;
+  margin: 20px 0 30px;
+  font-style: italic;
+  color: #555;
+}
+
+[data-theme="dark"] .bangumi-page blockquote,
+[data-theme="dark"] #bangumi blockquote {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-left-color: #8b9cf7;
+  color: #ccc;
+}
+
+/* --- 标签页导航 --- */
+.bangumi-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 20px !important;
+  padding: 6px;
+  background: rgba(102, 126, 234, 0.06);
+  border-radius: 14px;
+  width: fit-content;
+}
+
+a.bangumi-tab {
+  padding: 10px 24px !important;
+  border-radius: 10px;
+  font-family: "LXGW WenKai", Inter, sans-serif !important;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a.bangumi-tab:hover {
+  background: rgba(102, 126, 234, 0.12);
+  color: #667eea;
+}
+
+a.bangumi-tab.bangumi-active,
+.bangumi-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+[data-theme="dark"] .bangumi-tabs {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+[data-theme="dark"] a.bangumi-tab {
+  color: #bbb;
+}
+
+[data-theme="dark"] a.bangumi-tab:hover {
+  color: #8b9cf7;
+  background: rgba(102, 126, 234, 0.15);
+}
+
+/* --- 内容卡片 --- */
+.bangumi-item {
+  background: #fff;
+  border-radius: 14px !important;
+  padding: 20px !important;
+  margin-bottom: 16px !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  min-height: auto !important;
+}
+
+.bangumi-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .bangumi-item {
+  background: #1e293b !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .bangumi-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 封面图片 --- */
+.bangumi-picture {
+  position: relative !important;
+  width: auto !important;
+  left: auto !important;
+  top: auto !important;
+  float: left;
+  margin-right: 20px;
+}
+
+.bangumi-picture img {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.bangumi-picture img:hover {
+  transform: scale(1.03);
+}
+
+/* --- 信息区域 --- */
+.bangumi-info {
+  padding-left: 0 !important;
+  overflow: hidden;
+}
+
+.bangumi-title {
+  font-family: "LXGW WenKai", Inter, sans-serif !important;
+  font-size: 1.2em !important;
+  margin-bottom: 8px;
+}
+
+.bangumi-title a {
+  color: #333;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.bangumi-title a:hover {
+  color: #667eea;
+}
+
+[data-theme="dark"] .bangumi-title a {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .bangumi-title a:hover {
+  color: #8b9cf7;
+}
+
+/* --- 元数据信息栏 --- */
+.bangumi-info-items {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;
+  float: none !important;
+  width: auto !important;
+  height: auto !important;
+  color: #667eea !important;
+}
+
+.bangumi-info-item {
+  background: rgba(102, 126, 234, 0.08);
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  border-right: none !important;
+  width: auto !important;
+  height: auto !important;
+  text-align: center;
+}
+
+.bangumi-info-label {
+  font-size: 0.7em;
+  color: #888;
+  line-height: 1.2;
+}
+
+.bangumi-info-item em {
+  font-size: 0.85em;
+  font-weight: 700;
+  padding-top: 2px !important;
+  color: #333;
+}
+
+[data-theme="dark"] .bangumi-info-item {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+[data-theme="dark"] .bangumi-info-item em {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .bangumi-info-label {
+  color: #aaa;
+}
+
+.bangumi-info-total {
+  font-size: 0.85em;
+  padding-top: 6px !important;
+}
+
+/* --- 进度条 --- */
+.bangumi-info .bangumi-progress {
+  background-color: rgba(102, 126, 234, 0.1) !important;
+  border-radius: 8px !important;
+  height: 22px !important;
+  margin-top: 10px !important;
+}
+
+.bangumi-info .bangumi-progress-text {
+  font-family: "LXGW WenKai", Inter, sans-serif !important;
+  font-size: 0.8em !important;
+  color: #555 !important;
+}
+
+.bangumi-info .bangumi-progress .progress-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="dark"] .bangumi-info .bangumi-progress {
+  background-color: rgba(102, 126, 234, 0.15) !important;
+}
+
+[data-theme="dark"] .bangumi-info .bangumi-progress-text {
+  color: #ccc !important;
+}
+
+/* --- 简介文本 --- */
+.bangumi-comments {
+  font-family: "LXGW WenKai", Inter, sans-serif !important;
+  font-size: 0.88em !important;
+  color: #666;
+  margin-top: 12px !important;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .bangumi-comments {
+  color: #aaa !important;
+}
+
+/* --- 分页按钮 --- */
+.bangumi-pagination {
+  margin-top: 24px !important;
+}
+
+.bangumi-button {
+  padding: 8px 20px !important;
+  border-radius: 8px;
+  font-family: "LXGW WenKai", Inter, sans-serif !important;
+  transition: all 0.3s ease;
+}
+
+.bangumi-button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #fff !important;
 }

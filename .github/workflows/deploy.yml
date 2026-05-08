@@ -32,6 +32,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Update bangumi data
+        run: npx hexo bangumi -u ${{ secrets.BILIBILI_SESSDATA }}
+        continue-on-error: true
+
+      - name: Update cinema data
+        run: npx hexo cinema -u ${{ secrets.BILIBILI_SESSDATA }}
+        continue-on-error: true
+
       - name: Build Hexo
         run: npx hexo generate
         env:

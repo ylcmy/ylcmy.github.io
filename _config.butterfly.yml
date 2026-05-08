@@ -9,7 +9,8 @@ menu:
   标签: /tags/ || fas fa-tags
   列表||fas fa-list:
     音乐: /music/ || fas fa-music
-    影视: /movies/ || fas fa-video
+    追番: /bangumis/ || fas fa-tv
+    追剧: /cinemas/ || fas fa-film
   友链: /links/ || fas fa-link
   关于: /about/ || fas fa-heart
 

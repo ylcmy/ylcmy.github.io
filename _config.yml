@@ -117,3 +117,34 @@ encrypt:
   abstract: 本文已加密，请输入密码查看
   wrong_pass_message: 密码错误，请重新输入
   autoSave: true
+
+# hexo-bilibili-bangumi 追番/追剧配置
+bangumi:
+  enable: true
+  source: bili
+  path: bangumis/index.html
+  vmid: 1197735953
+  title: '最近追番'
+  quote: '生命不息，追番不止！'
+  show: 1
+  lazyload: true
+  webp: true
+  progress: true
+  progressBar: true
+  order: -score
+  pagination: false
+
+cinema:
+  enable: true
+  source: bili
+  path: cinemas/index.html
+  vmid: 1197735953
+  title: '最近追剧'
+  quote: '追剧是最好的放松方式。'
+  show: 1
+  lazyload: true
+  webp: true
+  progress: true
+  progressBar: true
+  order: -score
+  pagination: false
