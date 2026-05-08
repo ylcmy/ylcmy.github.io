@@ -2,34 +2,37 @@
 title: 音乐
 type: "music"
 date: 2026-05-07 00:00:00
+aplayer: true
 ---
 
-## 我的音乐
+## 我的歌单
 
-<div class="music-page">
-  <p>在这里分享我喜欢的音乐，放松心情，享受旋律。</p>
+<div class="music-section">
+  <p class="music-intro">收集那些陪伴 coding 与生活的旋律。</p>
 </div>
 
-## 推荐歌单
-
-### 学习编程时听的音乐
-
-<div class="music-card">
-  <h3>Lo-Fi Hip Hop</h3>
-  <p>适合编程时聆听的轻松节拍</p>
-  <a href="https://music.163.com/" target="_blank">前往收听</a>
+<div class="music-playlist-item music-source-tencent">
+  <div class="music-card-header">
+    <span class="music-card-platform"><i class="fab fa-qq"></i> QQ音乐</span>
+    <h3 class="music-playlist-title">周杰伦</h3>
+  </div>
+  {% meting "7865837159" "tencent" "playlist" "theme:#11b458" "listfolded" "listmaxheight:340px" "mutex:true" "preload:none" %}
 </div>
 
-<div class="music-card">
-  <h3>电影原声带</h3>
-  <p>经典电影配乐，激发灵感</p>
-  <a href="https://music.163.com/" target="_blank">前往收听</a>
+<div class="music-playlist-item music-source-tencent">
+  <div class="music-card-header">
+    <span class="music-card-platform"><i class="fab fa-qq"></i> QQ音乐</span>
+    <h3 class="music-playlist-title">跑步歌单</h3>
+  </div>
+  {% meting "9189900034" "tencent" "playlist" "theme:#0d913f" "listfolded" "listmaxheight:340px" "mutex:true" "preload:none" %}
 </div>
 
-## 正在听
-
-<div class="now-playing">
-  <p>最近循环播放的歌曲...</p>
+<div class="music-playlist-item music-source-netease">
+  <div class="music-card-header">
+    <span class="music-card-platform"><i class="fas fa-cloud"></i> 网易云</span>
+    <h3 class="music-playlist-title">我的喜欢</h3>
+  </div>
+  {% meting "2836137690" "netease" "playlist" "theme:#c20c0c" "listfolded" "listmaxheight:340px" "mutex:true" "preload:none" %}
 </div>
 
 ---

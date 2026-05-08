@@ -319,3 +319,9 @@ inject:
   bottom:
     - <script src="/js/runtime.js"></script>
     - <script src="/js/catalog-bar.js"></script>
+    - <script src="/js/music-player.js"></script>
+
+# APlayer 音乐播放器
+aplayerInject:
+  enable: true
+  per_page: false

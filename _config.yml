@@ -148,3 +148,12 @@ cinema:
   progressBar: true
   order: -score
   pagination: false
+
+# hexo-tag-aplayer 音乐播放器配置
+aplayer:
+  meting: true
+  asset_inject: false
+  cdn:
+    aplayer_css: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
+    aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
+    meting_js: https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js
